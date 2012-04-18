@@ -100,9 +100,7 @@ public class NewBill extends javax.swing.JPanel {
         columnBill.addElement("dateStart");
         columnBill.addElement("ExpiredTime");
         columnBill.addElement("Tax");
-        //columnBill.addElement("price");
-        //columnBill.addElement("status");
-        //columnBill.addElement("UserCode");
+       
         modelTableBill.setColumnIdentifiers(columnBill);
         Bills objBill = new Bills();
         for(int i=0; i< vLoad.size();i++){
@@ -115,9 +113,7 @@ public class NewBill extends javax.swing.JPanel {
             rowBill.addElement(objBill.getdateStart());
             rowBill.addElement(objBill.getexpiredTime());
             rowBill.addElement(objBill.gettax());
-            //rowBill.addElement(objBill.getprice());
-            //rowBill.addElement(objBill.getstatus());
-            //rowBill.addElement(objBill.getuserCode());
+         
             modelTableBill.addRow(rowBill);
         }
         tableNewBill.setModel(modelTableBill);

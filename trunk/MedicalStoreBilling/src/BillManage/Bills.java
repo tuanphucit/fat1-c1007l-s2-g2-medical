@@ -356,6 +356,7 @@ public class Bills {
                 objBill.billType = rs.getString(1);
                 objBill.customerName = rs.getString(2);
                 objBill.relationship = rs.getString(3);
+                objBill.expiredTime=rs.getString(4);
                 objBill.price = rs.getFloat(5);
                 objBill.status = rs.getString(6);
                 objBill.userName = rs.getString(7);

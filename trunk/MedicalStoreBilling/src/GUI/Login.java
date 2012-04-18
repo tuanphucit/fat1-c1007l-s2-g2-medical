@@ -48,8 +48,10 @@ public class Login extends javax.swing.JFrame {
                 if(e.getKeyText(e.getKeyCode()).equalsIgnoreCase("enter"))
                     send();
             }
+            @Override
             public void keyReleased(KeyEvent e) {
             }
+            @Override
             public void keyTyped(KeyEvent e) {
             }
         });

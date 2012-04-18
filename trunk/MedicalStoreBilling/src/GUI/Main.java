@@ -1,48 +1,27 @@
 /*
  * Main.java
  *
- * Created on April 8, 2012, 2:59 PM
+ * Created on April 8, 2012, 4:59 PM
  */
 
 package GUI;
 
 import BillManage.BillManages;
-import BillManage.BillManages;
 import BillManage.NewBill;
-import BillManage.Payment;
+
 import BillManage.Report;
 import CustomerManage.CustomerList;
-import CustomerManage.Customer;
 import MeasureManage.*;
 import MedicineManage.*;
 import MedicineTypeManage.MedicineTypeLists;
-import MedicineTypeManage.MedicineTypeLists;
-import OrderManage.NewOrders;
-import OrderManage.OrderManages;
+
 import Search.Search;
 import SupplierManage.SupplierLists;
-import SupplierManage.SupplierLists;
-import SupplierManage.Suppliers;
 import UserManage.ChangePass;
 import UserManage.UserLists;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.sql.SQLException;
 import java.text.DateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import GUI.Login;
 import java.util.Locale;
-import java.util.Vector;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JOptionPane;
-import javax.swing.JTabbedPane;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.Timer;
 /**
  *
  * @author  
@@ -58,16 +37,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         setUser();
         checkLogin();
-         Timer dongho = new Timer(1000, new ActionListener() {
-             public void actionPerformed(ActionEvent e) {
-               Calendar lich = Calendar.getInstance();
-               int gio = lich.get(Calendar.HOUR);
-               int phut = lich.get(Calendar.MINUTE);
-               int giay=lich.get(Calendar.SECOND);
-               txtCurrent.setText(" "+gio+ " : " +phut+ " : " +giay);
-             }
-         });
-        dongho.start();
+      
     }
      public void setUser(){
         nameLogin = Login.namers;
@@ -119,7 +89,6 @@ public class Main extends javax.swing.JFrame {
         jToolBar4 = new javax.swing.JToolBar();
         jButton4 = new javax.swing.JButton();
         jToolBar5 = new javax.swing.JToolBar();
-        jButton5 = new javax.swing.JButton();
         jToolBar6 = new javax.swing.JToolBar();
         jButton6 = new javax.swing.JButton();
         jToolBar7 = new javax.swing.JToolBar();
@@ -130,23 +99,16 @@ public class Main extends javax.swing.JFrame {
         mnuMedicineType = new javax.swing.JButton();
         jToolBar10 = new javax.swing.JToolBar();
         jButton10 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        txtCurrent = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
         jToolBar11 = new javax.swing.JToolBar();
         jButton2 = new javax.swing.JButton();
-        jToolBar12 = new javax.swing.JToolBar();
-        jButton7 = new javax.swing.JButton();
-        jToolBar13 = new javax.swing.JToolBar();
-        jButton8 = new javax.swing.JButton();
-        jToolBar14 = new javax.swing.JToolBar();
-        jButton9 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         tbContent = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
+        mnuNewBill = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JSeparator();
         javax.swing.JMenuItem mnuLogin = new javax.swing.JMenuItem();
         mnuExit = new javax.swing.JMenuItem();
@@ -159,7 +121,7 @@ public class Main extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel1.setText("User Login: ");
@@ -222,12 +184,11 @@ public class Main extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/images9.png"))); // NOI18N
@@ -236,8 +197,7 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar2.setFloatable(false);
 
-        mnuMedicine.setFont(new java.awt.Font("Tahoma", 1, 12));
-        mnuMedicine.setForeground(new java.awt.Color(0, 0, 255));
+        mnuMedicine.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         mnuMedicine.setText("Medecine Manage");
         mnuMedicine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,8 +208,7 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar3.setFloatable(false);
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton3.setForeground(new java.awt.Color(0, 0, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("Customers Manage");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,8 +219,7 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar4.setFloatable(false);
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton4.setForeground(new java.awt.Color(51, 51, 255));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setText("Supliers Manage");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,20 +230,9 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar5.setFloatable(false);
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton5.setForeground(new java.awt.Color(0, 0, 255));
-        jButton5.setText("Orders Manage");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jToolBar5.add(jButton5);
-
         jToolBar6.setFloatable(false);
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton6.setForeground(new java.awt.Color(0, 0, 255));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton6.setText("Report Manage");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,8 +243,7 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar7.setFloatable(false);
 
-        mnuUserMange.setFont(new java.awt.Font("Tahoma", 1, 12));
-        mnuUserMange.setForeground(new java.awt.Color(0, 0, 255));
+        mnuUserMange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         mnuUserMange.setText("User Manager");
         mnuUserMange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,8 +254,7 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar8.setFloatable(false);
 
-        mnuMeasure.setFont(new java.awt.Font("Tahoma", 1, 12));
-        mnuMeasure.setForeground(new java.awt.Color(0, 0, 255));
+        mnuMeasure.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         mnuMeasure.setText("MeaSure Manage");
         mnuMeasure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,8 +265,7 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar9.setFloatable(false);
 
-        mnuMedicineType.setFont(new java.awt.Font("Tahoma", 1, 12));
-        mnuMedicineType.setForeground(new java.awt.Color(0, 0, 255));
+        mnuMedicineType.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         mnuMedicineType.setText("Medicine Type");
         mnuMedicineType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,9 +276,8 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar10.setFloatable(false);
 
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton10.setForeground(new java.awt.Color(0, 0, 255));
-        jButton10.setText("Change PassWord");
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton10.setText("New Bill");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -342,35 +285,9 @@ public class Main extends javax.swing.JFrame {
         });
         jToolBar10.add(jButton10);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        txtCurrent.setFont(new java.awt.Font("Tahoma", 1, 12));
-        txtCurrent.setForeground(new java.awt.Color(255, 0, 0));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jLabel8.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel8.setText("Current:");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCurrent, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel8)
-                .addComponent(txtCurrent, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         jToolBar1.setFloatable(false);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton1.setForeground(new java.awt.Color(0, 0, 255));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("Bill Manage");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -381,8 +298,7 @@ public class Main extends javax.swing.JFrame {
 
         jToolBar11.setFloatable(false);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton2.setForeground(new java.awt.Color(0, 0, 255));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("Search");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -391,73 +307,27 @@ public class Main extends javax.swing.JFrame {
         });
         jToolBar11.add(jButton2);
 
-        jToolBar12.setFloatable(false);
-
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton7.setForeground(new java.awt.Color(51, 51, 255));
-        jButton7.setText("Payment");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        jToolBar12.add(jButton7);
-
-        jToolBar13.setRollover(true);
-        jToolBar13.setBorderPainted(false);
-
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton8.setForeground(new java.awt.Color(0, 0, 225));
-        jButton8.setText("New Bill");
-        jButton8.setFocusable(false);
-        jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        jToolBar13.add(jButton8);
-
-        jToolBar14.setRollover(true);
-        jToolBar14.setBorderPainted(false);
-
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 12));
-        jButton9.setForeground(new java.awt.Color(0, 0, 255));
-        jButton9.setText("New Order");
-        jButton9.setFocusable(false);
-        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        jToolBar14.add(jButton9);
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToolBar9, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToolBar14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToolBar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToolBar8, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToolBar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToolBar11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToolBar12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(275, 275, 275)
+                        .addComponent(jToolBar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jToolBar6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jToolBar4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jToolBar3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jToolBar10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jToolBar13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToolBar11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -481,20 +351,16 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToolBar6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBar5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jToolBar5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToolBar11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBar12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBar13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBar14, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
+
+        jLabel6.setBackground(new java.awt.Color(204, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(204, 0, 0));
 
         tbContent.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -508,7 +374,7 @@ public class Main extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 488, Short.MAX_VALUE)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
 
         tbContent.addTab("Main", jPanel4);
@@ -520,6 +386,16 @@ public class Main extends javax.swing.JFrame {
                 mnuFileActionPerformed(evt);
             }
         });
+
+        mnuNewBill.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_MASK));
+        mnuNewBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/001_02.png"))); // NOI18N
+        mnuNewBill.setText("Change PassWord");
+        mnuNewBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuNewBillActionPerformed(evt);
+            }
+        });
+        mnuFile.add(mnuNewBill);
         mnuFile.add(jSeparator1);
 
         mnuLogin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
@@ -570,35 +446,32 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
                     .addComponent(tbContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tbContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(tbContent, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-1102)/2, (screenSize.height-750)/2, 1102, 750);
+        setBounds((screenSize.width-1068)/2, (screenSize.height-668)/2, 1068, 668);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-// TODO add your handling code here:
-     //   Payment pm=new Payment();
-        tbContent.removeAll();
-        //tbContent.add("Payment",pm);
-        
-    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 // TODO add your handling code here:
@@ -607,16 +480,9 @@ public class Main extends javax.swing.JFrame {
         tbContent.add("Search",bm);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-// TODO add your handling code here:
-        OrderManages om=new OrderManages();
-        tbContent.removeAll();
-        tbContent.add("Order Manage",om);
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
 // TODO add your handling code here:
-      Report r=new Report();
+        Report r=new Report();
         tbContent.removeAll();
         tbContent.add("Report",r);
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -628,90 +494,83 @@ public class Main extends javax.swing.JFrame {
         tbContent.add("Bill Manage",bm);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+// TODO add your handling code here:
+         NewBill nb=new NewBill();
+        tbContent.removeAll();
+        tbContent.add("New Bill",nb);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
     private void mnuMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuMedicineActionPerformed
 // TODO add your handling code here:
-      //  Medicicals mdc=new Medicicals();
+        Medicicals mdc=new Medicicals();
         tbContent.removeAll();
-        //tbContent.add("Medicicals",mdc);
+        tbContent.add("Medicicals",mdc);      
     }//GEN-LAST:event_mnuMedicineActionPerformed
 
     private void mnuMedicineTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuMedicineTypeActionPerformed
 // TODO add your handling code here:
-         //MedicineTypeLists mtl=new MedicineTypeLists();
+         MedicineTypeLists mtl=new MedicineTypeLists();
          tbContent.removeAll();
-         //tbContent.add("MedicineTypeLists",mtl);
+         tbContent.add("MedicineTypeLists",mtl);
     }//GEN-LAST:event_mnuMedicineTypeActionPerformed
+
+    private void mnuMeasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuMeasureActionPerformed
+// TODO add your handling code here:
+         MeasureList meal=new MeasureList();
+         tbContent.removeAll();
+         tbContent.add("MeasureList",meal);
+    }//GEN-LAST:event_mnuMeasureActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 // TODO add your handling code here:
-  //      CustomerList cus=new CustomerList();
+        CustomerList cus=new CustomerList();
         tbContent.removeAll();
-    //    tbContent.add("CustomerList",cus);
+        tbContent.add("CustomerList",cus);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 // TODO add your handling code here:
-        //SupplierLists slist=new SupplierLists();
-        //tbContent.removeAll();
-        //tbContent.add("SupplierLists",slist);
+        SupplierLists slist=new SupplierLists();
+        tbContent.removeAll();
+        tbContent.add("SupplierLists",slist);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void mnuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLoginActionPerformed
+    private void mnuUserMangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuUserMangeActionPerformed
 // TODO add your handling code here:
-        dispose();
-        Login login=new Login();
-        login.setVisible(true);
-    }//GEN-LAST:event_mnuLoginActionPerformed
-
-    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
-// TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_mnuExitActionPerformed
-
-    private void mnuFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFileActionPerformed
-// TODO add your handling code here:
-    }//GEN-LAST:event_mnuFileActionPerformed
+        UserLists us=new UserLists();
+        tbContent.removeAll();
+        tbContent.add("UserLists",us);
+    }//GEN-LAST:event_mnuUserMangeActionPerformed
 
     private void mnuAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAboutActionPerformed
 // TODO add your handling code here:
     
     }//GEN-LAST:event_mnuAboutActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        NewBill bill=new NewBill();
-        tbContent.removeAll();
-        tbContent.add("New Bill", bill);
+    private void mnuFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFileActionPerformed
+        // TODO add your handling code here:
+}//GEN-LAST:event_mnuFileActionPerformed
+
+    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+}//GEN-LAST:event_mnuExitActionPerformed
+
+    private void mnuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLoginActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        Login login=new Login();
+        login.setVisible(true);
+}//GEN-LAST:event_mnuLoginActionPerformed
+
+    private void mnuNewBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuNewBillActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-NewOrders no=new NewOrders();
-tbContent.removeAll();
-tbContent.add("New Order", no);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-        ChangePass cp=new ChangePass();
+         ChangePass cp=new ChangePass();
         tbContent.removeAll();
         tbContent.add("ChangePass",cp);
-}//GEN-LAST:event_jButton10ActionPerformed
-
-    private void mnuUserMangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuUserMangeActionPerformed
-        // TODO add your handling code here:
-        //UserLists us=new UserLists();
-        tbContent.removeAll();
-        //tbContent.add("UserLists",us);
-}//GEN-LAST:event_mnuUserMangeActionPerformed
-
-    private void mnuMeasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuMeasureActionPerformed
-        // TODO add your handling code here:
-        //MeasureList meal=new MeasureList();
-        tbContent.removeAll();
-        //tbContent.add("MeasureList",meal);
-}//GEN-LAST:event_mnuMeasureActionPerformed
+}//GEN-LAST:event_mnuNewBillActionPerformed
     
     /**
      * @param args the command line arguments
@@ -732,30 +591,22 @@ tbContent.add("New Order", no);
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar10;
     private javax.swing.JToolBar jToolBar11;
-    private javax.swing.JToolBar jToolBar12;
-    private javax.swing.JToolBar jToolBar13;
-    private javax.swing.JToolBar jToolBar14;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JToolBar jToolBar3;
     private javax.swing.JToolBar jToolBar4;
@@ -773,9 +624,9 @@ tbContent.add("New Order", no);
     private javax.swing.JButton mnuMeasure;
     private javax.swing.JButton mnuMedicine;
     private javax.swing.JButton mnuMedicineType;
+    private javax.swing.JMenuItem mnuNewBill;
     private javax.swing.JButton mnuUserMange;
     private javax.swing.JTabbedPane tbContent;
-    private javax.swing.JTextField txtCurrent;
     // End of variables declaration//GEN-END:variables
     
 }

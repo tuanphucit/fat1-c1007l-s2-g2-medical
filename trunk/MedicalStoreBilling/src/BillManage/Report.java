@@ -7,7 +7,6 @@
 package BillManage;
 import java.sql.SQLException;
 import java.util.Vector;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -72,6 +71,7 @@ public class Report extends javax.swing.JPanel {
         columnBillOverdue.addElement("BillTYpe");
         columnBillOverdue.addElement("customerName");
         columnBillOverdue.addElement("Relationship");
+        columnBillOverdue.addElement("ExpiredDate");
         columnBillOverdue.addElement("Price");
         columnBillOverdue.addElement("status");
         columnBillOverdue.addElement("Creater");
@@ -83,6 +83,7 @@ public class Report extends javax.swing.JPanel {
             rowBillOverdue.addElement(objBills.getbillType());
             rowBillOverdue.addElement(objBills.getcustomerName());
             rowBillOverdue.addElement(objBills.getrelationship());
+            rowBillOverdue.addElement(objBills.getexpiredTime());
             rowBillOverdue.addElement(objBills.getprice());
             rowBillOverdue.addElement(objBills.getstatus());
             rowBillOverdue.addElement(objBills.getuserName());
@@ -132,14 +133,13 @@ public class Report extends javax.swing.JPanel {
                     if(test == 1)
                         count++;
                 }
-                if(count > 0){
+                if(count >= 0){
                     JOptionPane.showMessageDialog(this,"Delete "+count+" Bill","Remove Bill",JOptionPane.INFORMATION_MESSAGE);
                     vLoadBill = Bills.getBillsCompleteForReport();
+       //             vLoadBill=Bills.getAllBillsWaitting();
                     this.loadBillComplete("vBillNotDetails",vLoadBill);
-                }else
-                    JOptionPane.showMessageDialog(this,"Delete Bill Error !","Remove Bill",JOptionPane.ERROR_MESSAGE);
-                    vLoadBill = Bills.getBillsCompleteForReport();
-                    this.loadBillComplete("vBillNotDetails",vLoadBill);
+                }
+               
             }catch(SQLException ex){
                 System.err.println(ex.getMessage());
             }
@@ -173,7 +173,6 @@ public class Report extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setText("List of invoices for payment");
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
@@ -222,16 +221,15 @@ public class Report extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(94, 94, 94))
         );
 
-        jTabbedPane1.addTab("Bill Waiting", jPanel1);
+        jTabbedPane1.addTab("Bill Waiting", new javax.swing.ImageIcon(getClass().getResource("/Icon/bill.png")), jPanel1); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel2.setText("List of invoices for pay overdue");
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
@@ -280,14 +278,13 @@ public class Report extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addGap(71, 71, 71))
         );
 
-        jTabbedPane1.addTab("Bill Overdue", jPanel2);
+        jTabbedPane1.addTab("Bill Overdue", new javax.swing.ImageIcon(getClass().getResource("/Icon/bill.png")), jPanel2); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel3.setText("List of invoices has completed");
 
         btnRemove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Remove.png"))); // NOI18N
         btnRemove.setText("Remove");
@@ -330,7 +327,7 @@ public class Report extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addComponent(jLabel3)
-                .addContainerGap(455, Short.MAX_VALUE))
+                .addContainerGap(773, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -349,10 +346,10 @@ public class Report extends javax.swing.JPanel {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
                 .addComponent(btnRemove)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Bill Complete", jPanel3);
+        jTabbedPane1.addTab("Bill Complete", new javax.swing.ImageIcon(getClass().getResource("/Icon/bill.png")), jPanel3); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -367,8 +364,8 @@ public class Report extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-// TODO add your handling code here:
-        this.deleteBill();
+this.deleteBill();
+        // TOD
     }//GEN-LAST:event_btnRemoveActionPerformed
     
     

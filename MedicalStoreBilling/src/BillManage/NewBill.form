@@ -288,6 +288,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txfDateStart">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfDateStartActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try {&#xa;            txfDateStart = new JFormattedTextField(new MaskFormatter(&quot;####-##-##&quot;));&#xa;        } catch (ParseException ex) {&#xa;            ex.printStackTrace();&#xa;        }"/>
           </AuxValues>

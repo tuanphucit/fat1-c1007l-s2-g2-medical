@@ -907,6 +907,11 @@ public class BillManages extends javax.swing.JPanel {
         jLabel16.setText("Payed");
 
         txtPayed.setEnabled(false);
+        txtPayed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPayedActionPerformed(evt);
+            }
+        });
 
         btnPay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/login.png"))); // NOI18N
         btnPay.setText("Pay");
@@ -1014,7 +1019,7 @@ public class BillManages extends javax.swing.JPanel {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -1183,6 +1188,10 @@ try {
     private void radImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radImportActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radImportActionPerformed
+
+    private void txtPayedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPayedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPayedActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

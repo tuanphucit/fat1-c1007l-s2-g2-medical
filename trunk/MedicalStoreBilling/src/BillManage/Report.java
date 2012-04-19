@@ -5,7 +5,9 @@
  */
 
 package BillManage;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -118,6 +120,11 @@ public class Report extends javax.swing.JPanel {
         }
         tableBillsComplete.setModel(ModelTableBillComplete);
     }
+      public static String datetoString(Date day)
+    { SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
+      String strDay=dateFormat.format(day);
+          return  strDay;
+      }
     
       
      public void deleteBill(){
